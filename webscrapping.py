@@ -127,6 +127,10 @@ for movie in prefinalthrillerlist:
 
 d = {'Comedy':top100comedymovies,'Drama':top100dramamovies, 'Horror':top100horrormovies , 'Thriller': top100thrillermovies, 'Romance':top100romancemovies}
 
-df = pd.DataFrame(d)
+dfTomatoe = pd.DataFrame(d)
+
+dfTomatoe.to_csv('../dfTomatoe.csv')
+
+
 
 
