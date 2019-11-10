@@ -129,7 +129,7 @@ d = {'Comedy':top100comedymovies,'Drama':top100dramamovies, 'Horror':top100horro
 
 dfTomatoe = pd.DataFrame(d)
 
-dfTomatoe.to_csv('../dfTomatoe.csv')
+dfTomatoe.to_csv('./output/dfTomatoe.csv')
 
 
 
