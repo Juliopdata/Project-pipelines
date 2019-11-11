@@ -17,9 +17,11 @@ def parse():
 	return parser.parse_args()
 
 def start(genre,email):
-	print("Looking for "+genre+" movie!\n")
+    print("Looking for "+genre+" movie!\n")
 	selectedGenre = chooseGenre(genre)
-	print("I have a movie for you:"+selectedGenre+"It's my choice")
+	
+	print("I have a movie for you: -->"+selectedGenre+ "<-- It's my choice")
+	
 	moviereport = showMovie(selectedGenre)
 	
 
