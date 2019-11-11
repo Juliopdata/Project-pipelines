@@ -1,14 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
-from pprint import pprint
-from lxml import html
-from lxml.html import fromstring
-import urllib.request
-from urllib.request import urlopen
 import random
 import re
-import scrapy
 
 def webScraper(url):
     res = requests.get(url)
@@ -129,7 +123,7 @@ d = {'comedy':top100comedymovies,'drama':top100dramamovies, 'horror':top100horro
 
 dfTomatoe = pd.DataFrame(d)
 
-dfTomatoe.to_csv('../output/dfTomatoe.csv')
+dfTomatoe.to_csv('./output/dfTomatoe.csv')
 
 
 

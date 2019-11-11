@@ -25,7 +25,7 @@ def chooseGenre(genre):
     while True:
         movie = random.choice(dtlist)
         if movie in dflist:
-            print (movie)
+            print ("My recommendation is " + movie.upper())
             return movie
             break
         else:
@@ -34,6 +34,5 @@ def chooseGenre(genre):
 def showMovie(movie):
     import pandas as pd
     moviereport = (dMovies[dMovies['title'] == movie])
-    print (moviereport)
     return moviereport
     
