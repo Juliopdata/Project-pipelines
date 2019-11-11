@@ -17,7 +17,7 @@ def checkMail(email):
             email=input('Please input a valid email:')
 
 
-def sendemail (email,report):
+def sendMail (email,report):
     subject = "Your RottenTomatoes recommendation"
     body = "Your info is in the attached PDF"
     sender_email = "pipelinesjulio@gmail.com"
@@ -63,4 +63,4 @@ def sendemail (email,report):
         server.login(sender_email, password)
         server.sendmail(sender_email, receiver_email, text)
 
-sendemail('juliopdata@gmail.com', ['./output/recommendation.pdf', 'recommendation.pdf' ])
+sendMail('juliopdata@gmail.com', ['./output/recommendation.pdf', 'recommendation.pdf' ])

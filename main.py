@@ -1,31 +1,37 @@
+import sys
 import argparse
-import pandas as pd
-from functions import chooseGenre
-from functions import showMovie
-from pdf import create_pdf
-​
+
 
 def parse():
-	parser = argparse.ArgumentParser()                 # analizador de argumentos
-	grupo = parser.add_mutually_exclusive_group()      # grupo mutuamente excluyente (solo una operacion)
-​
-	grupo.add_argument('-d', '--Drama', help='Search for drama movies.', action='store_true')           # action guarda el argumento
-	grupo.add_argument('-c', '--Comedy', help='Search for comedy movies.', action='store_true')
-	grupo.add_argument('-r', '--Romance', help='Search for romance movies.', action='store_true')
-	grupo.add_argument('-h', '--Horror', help='Search for horror movies.', action='store_true')
-    grupo.add_argument('-t', '--Thriller', help='Search for thriller movies.', action='store_true')
-	
-	parser.add_argument("-m", "--mail", type=str, help="Mail will receive the recommendation")
-    args = parse.parse_args()
+	parser = argparse.ArgumentParser(description='Choose a Genre, get a recommendation in your email')
+	parser.add_argument('genre', help='Search for a genre movies.', default='Horror')           # action guarda el argumento
+	parser.add_argument("mail", help="Mail will receive the recommendation")
+	args = parser.parse_args()
 	print(args)
 	return args
 
 
 def main():
-    args = parse()
-    genre = args.genre
-	dMovies = pd.read_csv('output/dfMovies.csv')
-	dTomatoe = pd.read_csv('output/dfTomatoe.csv')
+	args = parse()
+	import pandas as pd
+	from functions import chooseGenre
+	from functions import showMovie
+	from pdf import createPDF
+	from mail import checkMail
+	from mail import sendMail
+	print(sys.argv)
+	genre = args.genre
+	email = args.mail
+	movie = chooseGenre(genre)
+	moviereport = showMovie(movie)
+	pdf = createPDF(moviereport)
+	print('You have a movie recommendation report')
+	if args.mail != None:
+		mail = checkMail(args.mail)
+		sendMail(mail,pdf)
+	else:
+		print('You have the report in the path: {}'.format(doc[0]))
+
 
 
 if __name__=='__main__':
