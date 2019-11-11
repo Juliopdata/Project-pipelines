@@ -4,7 +4,7 @@ from functions import chooseGenre
 from functions import showMovie
 from pdf import create_pdf
 ​
-​
+
 def parse():
 	parser = argparse.ArgumentParser()                 # analizador de argumentos
 	grupo = parser.add_mutually_exclusive_group()      # grupo mutuamente excluyente (solo una operacion)
@@ -19,15 +19,6 @@ def parse():
     args = parse.parse_args()
 	print(args)
 	return args
-
-def start(genre, email):
-    print("Looking for "+genre+" movie!\n")
-	selectedGenre = chooseGenre(genre)
-	
-	print("I have a movie for you: -->"+selectedGenre+ "<-- It's my choice")
-	
-	moviereport = showMovie(selectedGenre)
-    pdftosend = create_pdf(moviereport)
 
 
 def main():
