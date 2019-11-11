@@ -3,49 +3,42 @@ from functions import chooseGenre
 from functions import showMovie
 from fpdf import FPDF
 
-def start(genre):
-    print("Looking for "+genre+" movie!\n")
-    selectedGenre = chooseGenre(genre)
-    print("I have a movie for you: -->"+selectedGenre+ "<-- It's my choice")
-    return showMovie(selectedGenre)
-
-moviereport = start('Drama')
-print (moviereport)
-
-def create_pdf(moviereport):
+def createPDF(moviereport):
     pdf = FPDF()
     pdf.add_page()
-    pdf.set_font('Arial', 'B', 16)
-    pdf.multi_cell(0, 10, 'Here is your movie recommendation', align='C')
+    pdf.set_font('Arial', 'B', 20)
+    pdf.multi_cell(0, 10, 'Here Is Your Movie Recommendation', align='C')
     pdf.ln(10)
-    pdf.set_font('Arial', 'B', 8)
-    pdf.cell(50, 10, 'Title', align='C', border = 1)
-    pdf.cell(50, 10, 'Original Title', align='C', border = 1)
-    pdf.cell(30, 10, 'Release Date', align='C', border = 1)
-    pdf.cell(25, 10, 'Runtime', align='C', border = 1)
-    pdf.cell(35, 10, 'Vote Average', align='C', border = 1)
-    
+    pdf.image('./images/tomate.png', 33)
     pdf.ln(10)
+    pdf.set_font('helvetica', 'B', 10)
+    pdf.cell(45, 7, 'Title', align='C', border = 1)
+    pdf.cell(45, 7, 'Original Title', align='C', border = 1)
+    pdf.cell(20, 7, 'Release', align='C', border = 1)
+    pdf.cell(20, 7, 'Runtime', align='C', border = 1)
+    pdf.cell(30, 7, 'Rate Average', align='C', border = 1)
+    pdf.cell(20, 7, 'Language', align='C', border = 1)
+    pdf.ln(7)
     pdf.set_font('times', '', 10)
-
-    Title = moviereport['title'].iloc[0]
-    OriginalTitle = moviereport['original_title'].iloc[0]
-    ReleaseDate = str(moviereport['release_date'].iloc[0])
-    Runtime = str(moviereport['runtime'].iloc[0])
-    VoteAverage = str(moviereport['vote_average'].iloc[0])
-    Overview = str(moviereport['overview'].iloc[0])
-
-    pdf.cell(50, 10, '%s' % (Title), align='C', border = 1)
-    pdf.cell(50, 10, '%s' % (OriginalTitle), align='C', border = 1)
-    pdf.cell(30, 10, '%s' % (ReleaseDate), align='C', border = 1)
-    pdf.cell(25, 10, '%s' % (Runtime), align='C', border = 1)
-    pdf.cell(35, 10, '%s' % (VoteAverage), align='C', border = 1)
-    pdf.set_font('arial', '', 20)
+    title = moviereport['title'].iloc[0]
+    original_title = moviereport['original_title'].iloc[0]
+    releasedate = moviereport['release_date'].iloc[0]
+    runtime = moviereport['runtime'].iloc[0]
+    voteaverage = moviereport['vote_average'].iloc[0]
+    overview = moviereport['overview'].iloc[0]
+    originallanguage = moviereport['original_language'].iloc[0]
+    pdf.cell(45, 7, '%s' % (title), align='C', border = 1)
+    pdf.cell(45, 7, '%s' % (original_title), align='C', border = 1)
+    pdf.cell(20, 7, '%s' % (releasedate), align='C', border = 1)
+    pdf.cell(20, 7, '%s' % (runtime), align='C', border = 1)
+    pdf.cell(30, 7, '%s' % (voteaverage), align='C', border = 1)
+    pdf.cell(20, 7, '%s' % (originallanguage), align='C', border = 1)
     pdf.ln(10)
-    pdf.cell(0, 10, 'Overview', align='C', border = 1)
-    pdf.ln(10)
-    pdf.multi_cell(0, 10, '%s' % (Overview), align='C', border = 1)
+    pdf.set_font('helvetica', 'B', 10)
+    pdf.cell(180, 7, 'Overview', align='C', border = 1)
+    pdf.ln(7)
+    pdf.set_font('times', '', 10)
+    pdf.multi_cell(180, 7, '%s' % (overview), align='C', border = 1)
+    pdf.output('./recommendation.pdf', 'F')
+    return ['./recommendation.pdf']
 
-    pdf.output('pruebo.pdf', 'F')
-
-create_pdf(moviereport)

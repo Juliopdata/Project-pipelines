@@ -8,7 +8,5 @@ def start(genre):
 	print("I have a movie for you: -->"+selectedGenre+ "<-- It's my choice")
 	moviereport = showMovie(selectedGenre)
 	print(moviereport)
-	
-
 
 start('Drama')
