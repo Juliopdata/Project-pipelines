@@ -17,6 +17,7 @@ def parse():
 	
 	parser.add_argument("-m", "--mail", type=str, help="Mail will receive the recommendation")
     args = parse.parse_args()
+	print(args)
 	return args
 
 def start(genre, email):
@@ -32,6 +33,8 @@ def start(genre, email):
 def main():
     args = parse()
     genre = args.genre
+	dMovies = pd.read_csv('output/dfMovies.csv')
+	dTomatoe = pd.read_csv('output/dfTomatoe.csv')
 
 
 if __name__=='__main__':

@@ -39,6 +39,6 @@ def createPDF(moviereport):
     pdf.ln(7)
     pdf.set_font('times', '', 10)
     pdf.multi_cell(180, 7, '%s' % (overview), align='C', border = 1)
-    pdf.output('./recommendation.pdf', 'F')
-    return ['./recommendation.pdf']
+    pdf.output('./output/recommendation.pdf', 'F')
+    return ['./output/recommendation.pdf', 'recommendation.pdf' ]
 
