@@ -125,7 +125,7 @@ for movie in prefinalthrillerlist:
     movie = movie.strip()
     top100thrillermovies.append(movie)
 
-d = {'Comedy':top100comedymovies,'Drama':top100dramamovies, 'Horror':top100horrormovies , 'Thriller': top100thrillermovies, 'Romance':top100romancemovies}
+d = {'comedy':top100comedymovies,'drama':top100dramamovies, 'horror':top100horrormovies , 'thriller': top100thrillermovies, 'romance':top100romancemovies}
 
 dfTomatoe = pd.DataFrame(d)
 

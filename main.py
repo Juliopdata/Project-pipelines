@@ -16,12 +16,15 @@ def main():
 	import pandas as pd
 	from functions import chooseGenre
 	from functions import showMovie
+	from functions import checkGenre
 	from pdf import createPDF
 	from mail import checkMail
 	from mail import sendMail
+
 	print(sys.argv)
 	genre = args.genre
 	email = args.mail
+	genre = checkGenre(genre)
 	movie = chooseGenre(genre)
 	moviereport = showMovie(movie)
 	pdf = createPDF(moviereport)

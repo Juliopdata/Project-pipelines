@@ -3,8 +3,19 @@ import random
 
 dMovies = pd.read_csv('output/dfMovies.csv')
 dTomatoe = pd.read_csv('output/dfTomatoe.csv')
+listgenres = ['drama', 'horror', 'comedy', 'thriller', 'romance']
 
-def checkGenre(genre)
+
+
+
+def checkGenre(genre):
+    while True:
+        if genre in listgenres:
+            return genre
+            break
+        else:
+            genre=input("Please choose a movie genre: drama, horror, comedy, thriller or romance ")
+
 
 def chooseGenre(genre):
     import pandas as pd
@@ -20,8 +31,6 @@ def chooseGenre(genre):
         else:
             continue
     
-
-
 def showMovie(movie):
     import pandas as pd
     moviereport = (dMovies[dMovies['title'] == movie])

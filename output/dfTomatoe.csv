@@ -1,4 +1,4 @@
-,Comedy,Drama,Horror,Thriller,Romance
+,comedy,drama,horror,thriller,romance
 0,Lady Bird,Black Panther,Get Out,Citizen Kane,Casablanca
 1,BlacKkKlansman,Lady Bird,The Cabinet of Dr. Caligari (Das Cabinet des Dr. Caligari),Get Out,It Happened One Night
 2,Modern Times,Citizen Kane,A Quiet Place,The Cabinet of Dr. Caligari (Das Cabinet des Dr. Caligari),The Shape of Water
@@ -35,8 +35,8 @@
 33,Isle of Dogs,Alien,Young Frankenstein,Skyfall,Sunrise: A Song of Two Humans
 34,La Dolce Vita,Spider-Man: Homecoming,The Evil Dead,Strangers on a Train,The Apartment
 35,Shaun the Sheep Movie,The Night of the Hunter,The Loved Ones,Invasion of the Body Snatchers,Before Sunrise
-36,City Lights,Seven Samurai (Shichinin no Samurai),Carrie,"The Godfather, Part II",The Hustler
-37,The Artist,Sunset Boulevard,The Innocents,Nightcrawler,Groundhog Day
+36,City Lights,Seven Samurai (Shichinin no Samurai),Carrie,"The Godfather, Part II",Groundhog Day
+37,The Artist,Sunset Boulevard,The Innocents,Nightcrawler,The Hustler
 38,The Nice Guys,Bicycle Thieves (Ladri di biciclette) (The Bicycle Thief),Invasion of the Body Snatchers,Anatomy of a Murder,Wings of Desire
 39,Birdman,Rebecca,The Love Witch,The Post,The Young Girls of Rochefort (Les Demoiselles de Rochefort)
 40,Love & Friendship,Rear Window,Suspiria,Notorious,To Catch a Thief
