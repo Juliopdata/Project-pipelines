@@ -49,4 +49,4 @@ To run the program the user needs to introduce two arguments:
 - A genre: comedy, romance, drama, horror or thriller
 - A valid email
 
->Example: Python3 main.py horror youremail@mail.com*
+>Example: *Python3 main.py horror youremail@mail.com*
