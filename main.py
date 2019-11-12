@@ -16,13 +16,11 @@ def parse():
 	parser.add_argument('genre', help='Choose: comedy, romance, drama, horror or thriller', default='Horror')           # action guarda el argumento
 	parser.add_argument('mail', help="Mail will receive the recommendation")
 	args = parser.parse_args()
-	print(args)
 	return args
 
 
 def main():
 	args = parse()
-	print(sys.argv)
 	genre = args.genre
 	email = args.mail
 	genre = checkGenre(genre)
