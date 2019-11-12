@@ -4,6 +4,7 @@ import pandas as pd
 from functions import chooseGenre
 from functions import showMovie
 from functions import checkGenre
+from functions import soundChecker
 from pdf import createPDF
 from mail import checkMail
 from mail import sendMail
@@ -35,8 +36,7 @@ def main():
 		print ("The movie recommendation has been sent to {}".format(email))
 	else:
 		print('You have the report in the path: {}'.format(moviereport[0]))
-	text = '"DING, DONG, YOU HAVE AN EMAIL"'
-	subprocess.call('espeak -vF4 '+text, shell=True)
+	soundChecker()
 
 if __name__=='__main__':
     main()
