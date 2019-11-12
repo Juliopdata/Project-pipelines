@@ -41,7 +41,7 @@ def soundChecker():
     answer = input("Do you are on Ubuntu with Espeak installed? Press Y or N? ")
     answer = answer.upper()
     if answer == 'Y':
-       text = '"DING, DONG, YOU HAVE AN EMAIL"'
+       text = '"DING, DONG, YOU HAVE, AN EMAIL"'
        subprocess.call('espeak -vF4 '+text, shell=True)
     else:
         print("Ohh...You should!:(")
