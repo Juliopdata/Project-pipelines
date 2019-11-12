@@ -12,7 +12,7 @@ import subprocess
 
 def parse():
 	parser = argparse.ArgumentParser(description='Choose a Genre, get a recommendation in your email')
-	parser.add_argument('genre', help='Search for a genre movies.', default='Horror')           # action guarda el argumento
+	parser.add_argument('genre', help='Choose: comedy, romance, drama, horror or thriller', default='Horror')           # action guarda el argumento
 	parser.add_argument("mail", help="Mail will receive the recommendation")
 	args = parser.parse_args()
 	print(args)
