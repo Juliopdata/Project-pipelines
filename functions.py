@@ -40,8 +40,9 @@ def showMovie(movie):
 def soundChecker():
     answer = input("Do you are on Ubuntu with Espeak installed? Press Y or N? ")
     answer = answer.upper()
+    mailname = input("Please write your name ")
     if answer == 'Y':
-       text = '"DING, DONG, YOU HAVE, AN EMAIL"'
+       text = '" {}, YOU HAVE, AN EMAIL."'.format(mailname)
        subprocess.call('espeak -vF4 '+text, shell=True)
     else:
-        print("Ohh...You should!:(")
+        print("Ohh...{} You should!:__(".format(mailname))
