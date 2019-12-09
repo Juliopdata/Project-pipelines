@@ -8,6 +8,9 @@ from dotenv import load_dotenv
 import re
 load_dotenv()
 
+
+# Check if email is right written
+
 def checkMail(email):
     while True:
         regex = r'^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$'
@@ -16,6 +19,7 @@ def checkMail(email):
         else:  
             email=input('Please input a valid email:')
 
+# Send email
 
 def sendMail (email,report):
     subject = "Your RottenTomatoes recommendation"

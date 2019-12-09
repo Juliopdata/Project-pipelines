@@ -7,7 +7,7 @@ dTomatoe = pd.read_csv('output/dfTomatoe.csv')
 listgenres = ['drama', 'horror', 'comedy', 'thriller', 'romance']
 
 
-
+# Check the user write right Genre
 
 def checkGenre(genre):
     while True:
@@ -17,10 +17,9 @@ def checkGenre(genre):
         else:
             genre=input("Please choose a movie genre: drama, horror, comedy, thriller or romance ")
 
+# Choice a random movie from rottentomatoes
 
 def chooseGenre(genre):
-    import pandas as pd
-    import random
     dtlist=dTomatoe[genre].tolist()
     dflist=dMovies['title'].tolist()
     while True:
@@ -31,12 +30,16 @@ def chooseGenre(genre):
             break
         else:
             continue
-    
+
+# Get the info of the random movie
+
 def showMovie(movie):
     import pandas as pd
     moviereport = (dMovies[dMovies['title'] == movie])
     return moviereport
-    
+
+# Check if you can reproduce the sound
+
 def soundChecker():
     answer = input("Do you are on Ubuntu with Espeak installed? Press Y or N? ")
     answer = answer.upper()

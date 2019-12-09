@@ -3,6 +3,8 @@ from functions import chooseGenre
 from functions import showMovie
 from fpdf import FPDF
 
+# Creates PDF
+
 def createPDF(moviereport):
     pdf = FPDF()
     pdf.add_page()
